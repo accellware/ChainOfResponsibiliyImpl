@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ChainOfRespImpl.DTO.Company;
 
-namespace ChainOfRespImpl.Helpers.Company
+namespace ChainOfRespImpl.Handlers.Company
 {
-    public class CompanyAddHandler : ConsoleHandler
+    public class CompanySearchHandler : ConsoleHandler
     {
         public override void Execute(int actionId)
         {
@@ -17,14 +16,12 @@ namespace ChainOfRespImpl.Helpers.Company
                 return;
             }
 
-            Console.WriteLine("Enter a name: ");
-            var dto = new CompanyAddDto();
-            dto.Name = Console.ReadLine();
+            Console.WriteLine("CompanySearchHandler not yet implemented.");
         }
 
         public override string GetAction()
         {
-            return $"{_id}. Add a company.";
+            return $"{_id}. Search a company.";
         }
     }
 }

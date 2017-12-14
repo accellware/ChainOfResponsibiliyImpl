@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ChainOfRespImpl.Helpers.Company
+namespace ChainOfRespImpl.Handlers.Company
 {
-    public class CompanyEditHandler : ConsoleHandler
+    public class CompanyListingHandler : ConsoleHandler
     {
         public override void Execute(int actionId)
         {
@@ -16,12 +16,12 @@ namespace ChainOfRespImpl.Helpers.Company
                 return;
             }
 
-            Console.WriteLine("CompanyEditHandler not yet implemented.");
+            Console.WriteLine("CompanyListingHandler not yet implemented.");
         }
 
         public override string GetAction()
         {
-            return $"{_id}. Edit a company.";
+            return $"{_id}. List a company.";
         }
     }
 }

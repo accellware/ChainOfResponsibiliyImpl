@@ -91,12 +91,12 @@
   <ItemGroup>
     <Compile Include="Config\AutomapperConfig.cs" />
     <Compile Include="DTO\Company\CompanyAddDto.cs" />
-    <Compile Include="Helpers\Company\CompanyAddHandler.cs" />
-    <Compile Include="Helpers\Company\CompanyDeleteHandler.cs" />
-    <Compile Include="Helpers\Company\CompanyEditHandler.cs" />
-    <Compile Include="Helpers\Company\CompanyListingHandler.cs" />
-    <Compile Include="Helpers\Company\CompanySearchHandler.cs" />
-    <Compile Include="Helpers\ConsoleHandler.cs" />
+    <Compile Include="Handlers\Company\CompanyAddHandler.cs" />
+    <Compile Include="Handlers\Company\CompanyDeleteHandler.cs" />
+    <Compile Include="Handlers\Company\CompanyEditHandler.cs" />
+    <Compile Include="Handlers\Company\CompanyListingHandler.cs" />
+    <Compile Include="Handlers\Company\CompanySearchHandler.cs" />
+    <Compile Include="Handlers\ConsoleHandler.cs" />
     <Compile Include="Migrations\201712141113257_Initial.cs" />
     <Compile Include="Migrations\201712141113257_Initial.Designer.cs">
       <DependentUpon>201712141113257_Initial.cs</DependentUpon>
@@ -117,7 +117,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Helpers\Employee\" />
+    <Folder Include="Handlers\Employee\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201712141113257_Initial.resx">

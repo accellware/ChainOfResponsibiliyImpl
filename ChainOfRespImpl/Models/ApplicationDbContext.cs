@@ -9,15 +9,10 @@ namespace ChainOfRespImpl.Models
 {
     public class ApplicationDbContext : DbContext
     {
-        public ApplicationDbContext() : base("DefaultConnection")
-        {
+        public ApplicationDbContext() : base("DefaultConnection") { }
 
-        }
-
-        public ApplicationDbContext(string nameOrConnectionString) : base(nameOrConnectionString)
-        {
-
-        }
+        public ApplicationDbContext(string nameOrConnectionString) 
+            : base(nameOrConnectionString) { }
 
         public DbSet<Company> Companies { get; set; }
 

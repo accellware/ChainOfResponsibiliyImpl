@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ChainOfRespImpl.Config;
-using ChainOfRespImpl.Helpers;
-using ChainOfRespImpl.Helpers.Company;
+using ChainOfRespImpl.Handlers;
+using ChainOfRespImpl.Handlers.Company;
 
 namespace ChainOfRespImpl
 {
