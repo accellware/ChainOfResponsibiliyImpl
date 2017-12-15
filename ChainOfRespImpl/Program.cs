@@ -43,7 +43,7 @@ namespace ChainOfRespImpl
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"Unknown error: {ex.Message}");
+                    Console.WriteLine($"Error: {ex.Message}");
                 }
                 finally
                 {
@@ -85,6 +85,8 @@ namespace ChainOfRespImpl
             {
                 Console.WriteLine(handler.GetAction());
             } while ((handler = handler.GetParent()) != null);
+
+            Console.WriteLine("0. Exit.");
         }
     }
 }

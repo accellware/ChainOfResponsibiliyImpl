@@ -22,7 +22,7 @@ namespace ChainOfRespImpl.Handlers.Company
                 return;
             }
 
-            Console.WriteLine("CompanySearchHandler not yet implemented.");
+            throw new NotImplementedException("CompanySearchHandler not yet implemented.");
         }
 
         public override string GetAction()

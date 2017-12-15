@@ -23,7 +23,7 @@ namespace ChainOfRespImpl.Handlers.Company
                 return;
             }
 
-            Console.WriteLine("CompanyDeleteHandler not yet implemented!");
+            throw new NotImplementedException("CompanyDeleteHandler not yet implemented!");
         }
 
         public override string GetAction()

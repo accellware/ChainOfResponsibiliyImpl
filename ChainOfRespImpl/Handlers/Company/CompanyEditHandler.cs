@@ -23,7 +23,7 @@ namespace ChainOfRespImpl.Handlers.Company
                 return;
             }
 
-            Console.WriteLine("CompanyEditHandler not yet implemented.");
+            throw new NotImplementedException("CompanyEditHandler not yet implemented.");
         }
 
         public override string GetAction()
