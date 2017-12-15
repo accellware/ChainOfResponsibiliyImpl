@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Unity;
 
 namespace ChainOfRespImpl.Handlers
 {
@@ -11,6 +12,12 @@ namespace ChainOfRespImpl.Handlers
         private static int _nextId = 1;
         protected readonly int _id = _nextId++;
         protected ConsoleHandler _predecessor;
+        protected readonly IUnityContainer _container;
+
+        public ConsoleHandler(IUnityContainer container)
+        {
+            _container = container;
+        }
 
         public void Add(ConsoleHandler handler)
         {

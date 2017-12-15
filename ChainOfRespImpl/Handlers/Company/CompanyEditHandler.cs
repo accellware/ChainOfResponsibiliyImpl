@@ -3,11 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Unity;
 
 namespace ChainOfRespImpl.Handlers.Company
 {
     public class CompanyEditHandler : ConsoleHandler
     {
+        public CompanyEditHandler(IUnityContainer unityContainer)
+            : base(unityContainer)
+        {
+
+        }
+
         public override void Execute(int actionId)
         {
             if (!CanExecute(actionId))

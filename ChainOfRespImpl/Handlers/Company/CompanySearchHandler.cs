@@ -3,11 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Unity;
 
 namespace ChainOfRespImpl.Handlers.Company
 {
     public class CompanySearchHandler : ConsoleHandler
     {
+        public CompanySearchHandler(IUnityContainer container) 
+            : base(container)
+        {
+        }
+
         public override void Execute(int actionId)
         {
             if (!CanExecute(actionId))
