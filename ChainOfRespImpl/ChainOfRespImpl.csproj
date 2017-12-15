@@ -49,6 +49,10 @@
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -91,6 +95,7 @@
   <ItemGroup>
     <Compile Include="Config\AutomapperConfig.cs" />
     <Compile Include="DTO\Company\CompanyAddDto.cs" />
+    <Compile Include="DTO\Company\CompanyListingDto.cs" />
     <Compile Include="Handlers\Company\CompanyAddHandler.cs" />
     <Compile Include="Handlers\Company\CompanyDeleteHandler.cs" />
     <Compile Include="Handlers\Company\CompanyEditHandler.cs" />
@@ -111,6 +116,7 @@
     <Compile Include="Repositories\ICompanyRepository.cs" />
     <Compile Include="Services\CompanyService.cs" />
     <Compile Include="Services\ICompanyService.cs" />
+    <Compile Include="Config\UnityConfig.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

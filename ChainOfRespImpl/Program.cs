@@ -6,17 +6,19 @@ using System.Threading.Tasks;
 using ChainOfRespImpl.Config;
 using ChainOfRespImpl.Handlers;
 using ChainOfRespImpl.Handlers.Company;
+using Unity;
 
 namespace ChainOfRespImpl
 {
     class Program
     {
         private static ConsoleHandler _handler;
+        private static IUnityContainer _unityContainer;
+
         static void Main(string[] args)
         {
-            RegisterHandlers();
-            RegisterMappings();
-
+            Init();
+            
             int actionId = 0;
             do
             {
@@ -34,9 +36,14 @@ namespace ChainOfRespImpl
                 catch(InvalidOperationException ex)
                 {
                     Console.WriteLine(ex.Message);
-                }catch(Exception)
+                }
+                catch(FormatException)
                 {
                     Console.WriteLine("Invalid input!");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error: {ex.Message}");
                 }
                 finally
                 {
@@ -46,6 +53,14 @@ namespace ChainOfRespImpl
             } while (actionId != 0);
         }
 
+        private static void Init()
+        {
+            _unityContainer = UnityConfig.CreateContainer();
+
+            RegisterHandlers();
+            RegisterMappings();
+        }
+
         private static void RegisterMappings()
         {
             AutomapperConfig.ConfigMapper();
@@ -53,11 +68,11 @@ namespace ChainOfRespImpl
 
         private static void RegisterHandlers()
         {
-            _handler = new CompanyAddHandler();
-            _handler.Add(new CompanyEditHandler());
-            _handler.Add(new CompanyListingHandler());
-            _handler.Add(new CompanySearchHandler());
-            _handler.Add(new CompanyDeleteHandler());
+            _handler = new CompanyAddHandler(_unityContainer);
+            _handler.Add(new CompanyEditHandler(_unityContainer));
+            _handler.Add(new CompanyListingHandler(_unityContainer));
+            _handler.Add(new CompanySearchHandler(_unityContainer));
+            _handler.Add(new CompanyDeleteHandler(_unityContainer));
         }
 
         private static void ShowMainMenu()
@@ -70,6 +85,8 @@ namespace ChainOfRespImpl
             {
                 Console.WriteLine(handler.GetAction());
             } while ((handler = handler.GetParent()) != null);
+
+            Console.WriteLine("0. Exit.");
         }
     }
 }

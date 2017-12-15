@@ -22,5 +22,10 @@ namespace ChainOfRespImpl.Repositories
 
             _dbContext.SaveChanges();
         }
+
+        public List<Company> GetCompanyList()
+        {
+            return _dbContext.Companies.ToList();
+        }
     }
 }

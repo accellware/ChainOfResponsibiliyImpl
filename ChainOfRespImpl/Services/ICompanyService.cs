@@ -10,5 +10,6 @@ namespace ChainOfRespImpl.Services
     public interface ICompanyService
     {
         void Add(CompanyAddDto dto);
+        List<CompanyListingDto> GetCompanyList();
     }
 }

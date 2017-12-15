@@ -15,6 +15,7 @@ namespace ChainOfRespImpl.Config
             AutoMapper.Mapper.Initialize(cfg =>
             {
                 cfg.CreateMap<CompanyAddDto, Company>();
+                cfg.CreateMap<Company, CompanyListingDto>();
             });
         }
     }

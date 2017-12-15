@@ -10,5 +10,6 @@ namespace ChainOfRespImpl.Repositories
     public interface ICompanyRepository
     {
         void Add(Company company);
+        List<Company> GetCompanyList();
     }
 }

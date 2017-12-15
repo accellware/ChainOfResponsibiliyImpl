@@ -23,5 +23,12 @@ namespace ChainOfRespImpl.Services
             var company = AutoMapper.Mapper.Map<Company>(dto);
             _companyRepo.Add(company);
         }
+
+        public List<CompanyListingDto> GetCompanyList()
+        {
+            var companyList = _companyRepo.GetCompanyList();
+
+            return AutoMapper.Mapper.Map<List<CompanyListingDto>>(companyList);
+        }
     }
 }
